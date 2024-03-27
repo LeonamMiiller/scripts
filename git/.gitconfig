@@ -1,0 +1,25 @@
+[includeIf "gitdir:~/git/maker/"]
+    path = ~/.ssh/azure/maker/.gitconfig
+
+[includeIf "gitdir:~/git/leonamMiiller/"]
+    path = ~/.ssh/github/LeonamMiiller/.gitconfig	
+
+
+[alias]
+# one-line log
+l = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
+ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+ld = log --pretty=format:"%C(yellow)%h\\ %C(green)%ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short --graph
+ls = log --pretty=format:"%C(green)%h\\ %C(yellow)[%ad]%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
+
+# list branches sorted by last modified
+b = "!git for-each-ref --sort='-authordate' --format='%(authordate)%09%(objectname:short)%09%(refname)' refs/heads | sed -e 's-refs/heads/--'"
+
+# switch branch
+sw = switch
+# switch and create local branch
+swc = switch -c
+
+# push actual branch to remote origin
+pof = !git push origin -f $(git branch | grep \\* | cut -d ' ' -f2)
+psu = !git push -u origin $(git branch | grep \\* | cut -d ' ' -f2)
