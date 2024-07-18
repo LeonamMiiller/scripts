@@ -1,0 +1,5 @@
+# remap MS Sculpt Comfort Mouse (Bluetooth) Windows key to Back key
+evdev:input:b0005v045Ep07A2*
+ KEYBOARD_KEY_700e3=reserved
+ KEYBOARD_KEY_90004=reserved
+ KEYBOARD_KEY_90005=reserved

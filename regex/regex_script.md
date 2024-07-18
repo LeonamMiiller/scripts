@@ -1,5 +1,6 @@
-- Encontrar textos entre chars:
-```
+# Encontrar textos entre chars
+
+```regex
 - Exrair textos entre chars [] ou {}:
 - regex: '(?<=\[|\{)(.*?)(?=\]|\})'
 
@@ -8,17 +9,22 @@
 ```
 
 - Encontrar textos
- ```
+
+ ```regex
 - Extrair textos que começam e finalizam com: <BEGIN> e <END>
-- regex: '<BEGIN>(.*?)<END>'
+regex: '<BEGIN>(.*?)<END>'
+
+- Encontrar Bloco de texto que contenham quebra de linha 
+regex: '(?<=<BEGIN>)([\S\s]*?)(?=<END>)'   
 
 <BEGIN> 
  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 <END>
  ```
 
- - Split de textos entre <NL>
- ``` 
+- Split de textos entre <NL>
+
+ ```regex
 - Exrair textos entre <NL>  
 - regex: '(?<=<NL>|^)(.+?)(?=<NL>|$)'
 
