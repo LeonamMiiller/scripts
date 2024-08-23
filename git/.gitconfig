@@ -1,7 +1,15 @@
-[includeIf "gitdir:~/git/maker/"]
-    path = ~/.ssh/azure/maker/.gitconfig
+# Linux Path
+[includeIf "gitdir:~/git/user_name/"]
+    path = ~/.ssh/azure/user_name/.gitconfig
 
 [includeIf "gitdir:~/git/leonamMiiller/"]
+    path = ~/.ssh/github/LeonamMiiller/.gitconfig	
+
+# Windows path
+[includeIf "gitdir/i:D:/git/user_name/"]
+    path = ~/.ssh/azure/user_name/.gitconfig
+
+[includeIf "gitdir/i:D:/git/leonamMiiller/"]
     path = ~/.ssh/github/LeonamMiiller/.gitconfig	
 
 
