@@ -21,8 +21,19 @@ ld = log --pretty=format:"%C(yellow)%h\\ %C(green)%ad%Cred%d\\ %Creset%s%Cblue\\
 ls = log --pretty=format:"%C(green)%h\\ %C(yellow)[%ad]%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
 
 # list branches sorted by last modified
-b = "!git for-each-ref --sort='-authordate' --format='%(authordate)%09%(objectname:short)%09%(refname)' refs/heads | sed -e 's-refs/heads/--'"
+lb = "!git for-each-ref --sort='-authordate' --format='%(authordate)%09%(objectname:short)%09%(refname)' refs/heads | sed -e 's-refs/heads/--'"
 
+# show current brach name
+b = branch --show-current
+
+# rebase na develop
+rbdev = rebase "origin/develop"
+
+# rebase na main
+rbmaster = rebase "origin/main"
+
+# ammed commit (need force push)
+amend = commit --amend --no-edit
 # switch branch
 sw = switch
 # switch and create local branch
